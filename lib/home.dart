@@ -8,10 +8,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Coffees',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        title: Text('Coffees'),
         backgroundColor: const Color.fromARGB(255, 42, 42, 50),
         centerTitle: true,
       ),
@@ -22,7 +19,14 @@ class Home extends StatelessWidget {
           Container(
             color: Colors.green[200],
             padding: const EdgeInsets.all(20),
-            child: const Text('Matcha'),
+            child: Text(
+              'Matcha',
+              style: TextStyle(
+                color: Colors.brown[900],
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
           ),
           Container(
             color: Colors.brown[400],

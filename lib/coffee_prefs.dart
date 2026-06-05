@@ -1,3 +1,5 @@
+import 'package:coffee_card/styled_body_text.dart';
+import 'package:coffee_card/styled_button.dart';
 import 'package:flutter/material.dart';
 
 class CoffeePrefs extends StatefulWidget {
@@ -18,7 +20,9 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
   }
 
   void increasedSugars() {
-    print('inc sugars by 1');
+    setState(() {
+      sugars++;
+    });
   }
 
   @override
@@ -28,8 +32,10 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
       children: [
         Row(
           children: [
-            Text('Strength: '),
+            StyledBodyText('Strength: '),
             Text('$strength'),
+            for (int i = 0; i < strength; i++)
+              Image.asset('assets/img/chopper.png', width: 25),
             SizedBox(width: 50),
             FilledButton(
               style: FilledButton.styleFrom(
@@ -47,6 +53,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
             Expanded(child: SizedBox(width: 50)),
             Text('$sugars'),
             Image.asset('assets/img/chopper.png', width: 25),
+            StyledButton(onPressed: increasedSugars, child: const Text('+')),
             TextButton(onPressed: increasedSugars, child: Text('+')),
           ],
         ),
