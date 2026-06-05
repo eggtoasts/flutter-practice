@@ -5,6 +5,38 @@ void main() {
   runApp(const MaterialApp(home: Home()));
 }
 
+class Sandbox2 extends StatelessWidget {
+  const Sandbox2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('hi'), backgroundColor: Colors.grey),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200,
+            color: Colors.blue[200],
+            child: const Text('bluu'),
+          ),
+          Container(
+            height: 400,
+            color: Colors.pink[200],
+            child: const Text('penk'),
+          ),
+          Container(
+            height: 500,
+            color: Colors.green[200],
+            child: const Text('gren'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class Sandbox extends StatelessWidget {
   const Sandbox({super.key});
 
